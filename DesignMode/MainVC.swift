@@ -14,15 +14,11 @@ class MainVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
        
-        let hb = HouseBlend()
-        print("price:\(hb.cost())")
-        print("des:" + hb.getDescription)
         
-        let milk = Milk(beverage: hb)
-        let whip = Whip(beverage: milk)
         
-        print("price:\(whip.cost())")
-        print("des:" + whip.getDescription)
+        
+      
+        
     }
 
     

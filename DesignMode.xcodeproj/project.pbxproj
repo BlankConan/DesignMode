@@ -13,6 +13,9 @@
 		0A5194592493741500EF57DE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0A5194582493741500EF57DE /* Assets.xcassets */; };
 		0A51945C2493741500EF57DE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0A51945A2493741500EF57DE /* LaunchScreen.storyboard */; };
 		0A519468249380EA00EF57DE /* WeatherData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A519467249380EA00EF57DE /* WeatherData.swift */; };
+		0A51947B2499B67600EF57DE /* xx.png in Resources */ = {isa = PBXBuildFile; fileRef = 0A51947A2499B67600EF57DE /* xx.png */; };
+		0AE8101424C30C5800D17AEF /* StateInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AE8101324C30C5800D17AEF /* StateInterface.swift */; };
+		0AE8101624C30CC500D17AEF /* GumballMachine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AE8101524C30CC500D17AEF /* GumballMachine.swift */; };
 		276C770124975DE3006001E6 /* Beverage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 276C770024975DE3006001E6 /* Beverage.swift */; };
 /* End PBXBuildFile section */
 
@@ -25,6 +28,9 @@
 		0A51945B2493741500EF57DE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		0A51945D2493741500EF57DE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0A519467249380EA00EF57DE /* WeatherData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherData.swift; sourceTree = "<group>"; };
+		0A51947A2499B67600EF57DE /* xx.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = xx.png; sourceTree = "<group>"; };
+		0AE8101324C30C5800D17AEF /* StateInterface.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StateInterface.swift; sourceTree = "<group>"; };
+		0AE8101524C30CC500D17AEF /* GumballMachine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GumballMachine.swift; sourceTree = "<group>"; };
 		276C770024975DE3006001E6 /* Beverage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Beverage.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -68,6 +74,7 @@
 		0A519463249374BC00EF57DE /* MainFile */ = {
 			isa = PBXGroup;
 			children = (
+				0A51947A2499B67600EF57DE /* xx.png */,
 				0A51944F2493741300EF57DE /* AppDelegate.swift */,
 				0A5194552493741300EF57DE /* Main.storyboard */,
 				0A5194582493741500EF57DE /* Assets.xcassets */,
@@ -80,26 +87,36 @@
 		0A519464249374FA00EF57DE /* Classes */ = {
 			isa = PBXGroup;
 			children = (
-				0A51946624937BE500EF57DE /* Observer */,
-				276C76FF24975896006001E6 /* Decorator */,
+				0AE8101224C30BF600D17AEF /* StateMode */,
+				0A51946624937BE500EF57DE /* ObserverMode */,
+				276C76FF24975896006001E6 /* DecoratorMode */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
 		};
-		0A51946624937BE500EF57DE /* Observer */ = {
+		0A51946624937BE500EF57DE /* ObserverMode */ = {
 			isa = PBXGroup;
 			children = (
 				0A519467249380EA00EF57DE /* WeatherData.swift */,
 			);
-			path = Observer;
-            sourceTree = "<group>";
-        };
-		276C76FF24975896006001E6 /* Decorator */ = {
+			path = ObserverMode;
+			sourceTree = "<group>";
+		};
+		0AE8101224C30BF600D17AEF /* StateMode */ = {
+			isa = PBXGroup;
+			children = (
+				0AE8101324C30C5800D17AEF /* StateInterface.swift */,
+				0AE8101524C30CC500D17AEF /* GumballMachine.swift */,
+			);
+			path = StateMode;
+			sourceTree = "<group>";
+		};
+		276C76FF24975896006001E6 /* DecoratorMode */ = {
 			isa = PBXGroup;
 			children = (
 				276C770024975DE3006001E6 /* Beverage.swift */,
 			);
-			path = Decorator;
+			path = DecoratorMode;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -161,6 +178,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				0A51945C2493741500EF57DE /* LaunchScreen.storyboard in Resources */,
+				0A51947B2499B67600EF57DE /* xx.png in Resources */,
 				0A5194592493741500EF57DE /* Assets.xcassets in Resources */,
 				0A5194572493741300EF57DE /* Main.storyboard in Resources */,
 			);
@@ -175,7 +193,9 @@
 			files = (
 				276C770124975DE3006001E6 /* Beverage.swift in Sources */,
 				0A5194542493741300EF57DE /* MainVC.swift in Sources */,
+				0AE8101624C30CC500D17AEF /* GumballMachine.swift in Sources */,
 				0A519468249380EA00EF57DE /* WeatherData.swift in Sources */,
+				0AE8101424C30C5800D17AEF /* StateInterface.swift in Sources */,
 				0A5194502493741300EF57DE /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
