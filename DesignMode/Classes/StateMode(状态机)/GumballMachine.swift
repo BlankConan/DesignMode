@@ -13,7 +13,7 @@ class GumballMachine: NSObject {
     var noQuarterState:State!
     var quarterState:State!
     var soldState:State!
-
+    var winnerState:State!
 
     var state:State!
     var count:Int = 0
@@ -21,13 +21,13 @@ class GumballMachine: NSObject {
     init(numGumballs:Int) {
         super.init()
         
-        self.count = numGumballs
-        self.soldOutState = SoldoutState(machine: self)
-        self.noQuarterState = NoQuarterState(machine: self)
-        self.quarterState = HasQuarterState(machine: self)
-        self.soldState = SoldState(machine: self)
-        
-        self.state = soldOutState
+        count = numGumballs
+        soldOutState = SoldoutState(machine: self)
+        noQuarterState = NoQuarterState(machine: self)
+        quarterState = HasQuarterState(machine: self)
+        soldState = SoldState(machine: self)
+        winnerState = WinnerState(machine: self)
+        state = soldOutState
         
         if numGumballs > 0 {
             self.state = noQuarterState

@@ -90,7 +90,13 @@ class HasQuarterState: State {
     
     func turnCrank() {
         print("You turned...")
-        gumballMachine?.state = gumballMachine?.soldState
+        // winner 机会 (10次多给一颗糖果)
+        let w = Int.random(in: 1...10)
+        if w == 1 && (gumballMachine?.count ?? 0) > 1 {
+            gumballMachine?.state = gumballMachine?.winnerState
+        } else {        
+            gumballMachine?.state = gumballMachine?.soldState
+        }
         
     }
     
@@ -126,6 +132,47 @@ class SoldState: State {
         } else {
             print("Oops, out of gumball")
             gumballMachine?.state = gumballMachine?.soldOutState
+        }
+    }
+}
+
+
+class WinnerState: State {
+    weak var gumballMachine:GumballMachine?
+    
+    init(machine:GumballMachine) {
+        self.gumballMachine = machine
+    }
+    
+    
+    func insertQuarter() {
+        print("Please wait, we're already giving you a gumball")
+    }
+    
+    func ejectQuarter() {
+        print("Sorry, you already turned the crank")
+    }
+    
+    func turnCrank() {
+        print("Turned twice does'nt get you another gumball")
+    }
+    
+    func dispence() {
+        print("YOU'RE A WINNER! You get two gumballs for your quarter")
+        gumballMachine?.releaseBall()
+        var leftBalls = gumballMachine?.count ?? 0
+        if leftBalls == 0 {
+            gumballMachine?.state = gumballMachine?.soldOutState
+        } else {
+            gumballMachine?.releaseBall()
+            leftBalls = gumballMachine?.count ?? 0
+            
+            if leftBalls > 0 {
+                gumballMachine?.state = gumballMachine?.noQuarterState
+            } else {
+                print("Oops, out of gumball")
+                gumballMachine?.state = gumballMachine?.soldOutState
+            }
         }
     }
 }

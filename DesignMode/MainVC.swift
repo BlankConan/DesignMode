@@ -14,9 +14,9 @@ class MainVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
        
-        let machine = GumballMachine(numGumballs: 10)
+        let machine = GumballMachine(numGumballs: 100)
         
-        for _ in 1...12 {
+        for _ in 1...100 {
             machine.insertQuarter()
             machine.trunCrank()
         }
